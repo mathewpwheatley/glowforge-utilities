@@ -33,7 +33,12 @@ for file in os.listdir(cwd):
 
 # Parse .svg file then update colors and groups
 for svg_file in svg_file_list:
-    path_list, path_attribute_list, svg_file_attributes = svgpathtools.svg2paths2(svg_file) 
+    path_list, path_attribute_list, svg_file_attributes = svgpathtools.svg2paths2(svg_file)
+    
+    # Ensure .svg was created by Shaper Origin Utilities
+    if "shaper:fusionaddin" not in svg_file_attributes:
+        print(f'{svg_file} was not created by Shaper Utilities, file skipped.')
+        break
     
     # Create two lists used to group paths when writing .svg file
     exterior_group_list = []
