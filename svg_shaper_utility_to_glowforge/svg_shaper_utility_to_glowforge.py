@@ -48,7 +48,7 @@ for svg_file in svg_file_list:
             path_dic["stroke-width"] = exterior_stroke_width
             exterior_group_list.append(path_dic)
         # Update exterior paths attributes and add them to list interior_group
-        if path_dic["shaper:pathType"] == "interior":
+        elif path_dic["shaper:pathType"] == "interior":
             path_dic["fill"] = interior_fill_color
             path_dic["stroke"] = interior_stroke_color
             path_dic["stroke-width"] = interior_stroke_width
