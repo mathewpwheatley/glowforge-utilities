@@ -1,14 +1,14 @@
 # Name: svg_shaper_utility_to_glowforge.py
 # Version: 0.1
-# Description: This python script takes a .svg file created by the Fushion 360
-#   Shaper Origin Utility and modifies the exterior and interior paths
+# Description: This python script takes a .svg file created by the Fusion 360
+#   Shaper Origin Utilities and modifies the exterior and interior paths
 #   fill/stroke/strok-color as well as the Inkscape user preferences. The paths
 #   are grouped appropriately. All .svg files in current working directory are 
 #   manipulated; original file is overwritten.
 # Use: Run in working directory with all .svg files you want to manipulate. 
 #  User inputs can be edited on lines 11 through 21.
 
-# Define user inputs, these must be stings in svg file readable format
+# Define user inputs, these must be strings in svg file readable format
 exterior_fill_color = 'none'
 exterior_stroke_color = 'rgb(0,0,0)'
 exterior_stroke_width = '0.005in'
@@ -63,7 +63,7 @@ for svg_file in svg_file_list:
     for key in svg_file_attributes:
         output.write('\t' + key + '="' + svg_file_attributes[key] + '"\n')
     output.write('\t' + '>' + '\n')
-    # Write inscape preferences if they exist
+    # Write inkscape preferences if they exist
     if inkscape_preferences:
         output.write('\t'+ inkscape_preferences + '\n')
     # Write path data for exterior group
